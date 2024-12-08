@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { Button } from '@/components/ui/Button'
-import { useFinanceAnalysis } from '@/hooks/useFinanceAnalysis'
-import type { AnalysisRequest } from '@/types/finance'
+import { Button } from 'src/components/ui/Button'
+import { useFinanceAnalysis } from 'src/hooks/useFinanceAnalysis'
+import type { AnalysisRequest } from 'src/types/finance'
 
 export default function FinanceAnalysis() {
   const [symbol, setSymbol] = useState('')
@@ -62,7 +62,7 @@ export default function FinanceAnalysis() {
           <Button 
             type="submit" 
             isLoading={isLoading}
-            className="w-full py-3 text-sm font-medium"
+            className="button w-full py-3 text-sm font-medium"
           >
             Analyze Stock
           </Button>
@@ -70,7 +70,7 @@ export default function FinanceAnalysis() {
       </div>
 
       {error && (
-        <div className="card p-4 mb-6 border-red-500 bg-red-500/10" role="alert">
+        <div className="error p-4 mb-6" role="alert">
           <p className="text-red-400">{error}</p>
         </div>
       )}

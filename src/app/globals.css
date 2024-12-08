@@ -10,12 +10,18 @@
   --border-color: #333333;
   --primary: #3b82f6;
   --primary-hover: #2563eb;
+  --secondary: #6366f1;
+  --secondary-hover: #4f46e5;
+  --error: #ef4444;
+  --success: #10b981;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .card {
@@ -23,6 +29,7 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 0.75rem;
   transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
@@ -35,6 +42,9 @@ body {
   border: 1px solid var(--border-color);
   color: var(--foreground);
   transition: all 0.2s ease;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
 }
 
 .input-field:focus {
@@ -44,9 +54,53 @@ body {
 
 .prose {
   color: var(--foreground) !important;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .prose pre {
   background: var(--input-bg) !important;
   border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.button {
+  background: var(--primary);
+  color: var(--foreground);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--primary-hover);
+}
+
+.button:disabled {
+  background: var(--border-color);
+  cursor: not-allowed;
+}
+
+.error {
+  background: var(--error);
+  color: var(--foreground);
+  border: 1px solid var(--error);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.success {
+  background: var(--success);
+  color: var(--foreground);
+  border: 1px solid var(--success);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
